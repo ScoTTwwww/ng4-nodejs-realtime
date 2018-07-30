@@ -33,9 +33,7 @@ io.on('connection', (socket) => {
 });
 
 // Initialize our websocket server on port 5000
-http2.listen(5000, () => {
-  console.log('started on port 5000');
-});
+http2.listen(5000,{origins: '*:*'} );
 
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
